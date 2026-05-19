@@ -20,6 +20,18 @@ public abstract class Interaccion {
     }
 
     public abstract void ejecutar();
+    public int getId(){
+        return id;
+    }
+    public Usuario getUsuario(){
+        return usuario;
+    }
+    public Contenido getContenido(){
+        return contenido;
+    }
+    public LocalDateTime getFecha(){
+        return fecha;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -43,3 +55,5 @@ public abstract class Interaccion {
                 '}';
     }
 }
+
+

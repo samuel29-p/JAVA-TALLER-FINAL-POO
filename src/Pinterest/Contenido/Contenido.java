@@ -15,6 +15,7 @@ public abstract class Contenido implements Comparable<Contenido>{
     protected List<String> etiquetas;
     protected String categoria;
     protected boolean esPublico;
+    protected String descripcion;
 
     public Contenido(int id, String titulo, Usuario usuario, String categoria){
         this.id = id;
@@ -25,6 +26,8 @@ public abstract class Contenido implements Comparable<Contenido>{
         this.fechaCreacion = LocalDateTime.now();
         this.esPublico = false;
     }
+
+    public abstract String getDescripcion();
 
     @Override
     public String toString() {
