@@ -1,4 +1,4 @@
-package Recomendacion;
+package Pinterest.Recomendacion;
 
 import Pinterest.Contenido.Contenido;
 import Pinterest.Usuario.Usuario;

@@ -1,4 +1,4 @@
-package Recomendacion;
+package Pinterest.Recomendacion;
 
 import Pinterest.Contenido.Contenido;
 import Pinterest.Usuario.GestorUsuarios;
@@ -6,12 +6,11 @@ import Pinterest.Usuario.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EstrategiaRed implements RecomendacionStrategy {
-
+public class EstrategiaIntereses implements RecomendacionStrategy {
     private GestorUsuarios gestorUsuarios;
     private List<Contenido> catalogoContenido;
 
-    public EstrategiaRed(GestorUsuarios gestorUsuarios, List<Contenido> catalogoContenido) {
+    public EstrategiaIntereses(GestorUsuarios gestorUsuarios, List<Contenido> catalogoContenido) {
         this.gestorUsuarios = gestorUsuarios;
         this.catalogoContenido = catalogoContenido;
     }
@@ -19,11 +18,11 @@ public class EstrategiaRed implements RecomendacionStrategy {
     @Override
     public List<Contenido> recomendar(Usuario usuario) {
         List<Contenido> recomendaciones = new ArrayList<>();
-        List<String> seguidos = usuario.getSeguidos();
+        double tasaUsuario = gestorUsuarios.getTasaInteraccion(usuario);
 
         for (Contenido contenido : catalogoContenido) {
-            String autorId = contenido.getUsuario().getId();
-            if (seguidos.contains(autorId)) {
+            double tasaAutor = gestorUsuarios.getTasaInteraccion(contenido.getUsuario());
+            if (tasaAutor >= tasaUsuario && !contenido.getUsuario().getId().equals(usuario.getId())) {
                 recomendaciones.add(contenido);
             }
         }
