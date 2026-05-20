@@ -18,25 +18,11 @@ public class Estadisticas implements Exportable {
         this.totalPublicaciones = 0;
     }
 
-    public void setTotalContenidos(int totalContenidos) {
-        this.totalContenidos = totalContenidos;
-    }
-
-    public void setTotalUsuarios(int totalUsuarios) {
-        this.totalUsuarios = totalUsuarios;
-    }
-
-    public void setTotalInteracciones(int totalInteracciones) {
-        this.totalInteracciones = totalInteracciones;
-    }
-
-    public void setTotalPublicaciones(int totalPublicaciones) {
-        this.totalPublicaciones = totalPublicaciones;
-    }
-
-    public void setContenidoMasReciente(Contenido contenidoMasReciente) {
-        this.contenidoMasReciente = contenidoMasReciente;
-    }
+    public void setTotalContenidos(int totalContenidos) { this.totalContenidos = totalContenidos; }
+    public void setTotalUsuarios(int totalUsuarios) { this.totalUsuarios = totalUsuarios; }
+    public void setTotalInteracciones(int totalInteracciones) { this.totalInteracciones = totalInteracciones; }
+    public void setTotalPublicaciones(int totalPublicaciones) { this.totalPublicaciones = totalPublicaciones; }
+    public void setContenidoMasReciente(Contenido contenidoMasReciente) { this.contenidoMasReciente = contenidoMasReciente; }
 
     public int getTotalContenidos() { return totalContenidos; }
     public int getTotalUsuarios() { return totalUsuarios; }

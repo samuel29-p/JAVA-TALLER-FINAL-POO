@@ -24,14 +24,14 @@ public class GestorBusqueda {
 
     public List<Contenido> buscarPorEtiqueta(String etiqueta) {
         return gestorContenido.getTodos().stream()
-                .filter(c -> c.etiquetas != null && c.etiquetas.stream()
+                .filter(c -> c.getEtiquetas() != null && c.getEtiquetas().stream()
                         .anyMatch(e -> e.equalsIgnoreCase(etiqueta)))
                 .collect(Collectors.toList());
     }
 
     public List<Contenido> buscarPorTitulo(String titulo) {
         return gestorContenido.getTodos().stream()
-                .filter(c -> c.titulo != null && c.titulo.toLowerCase().contains(titulo.toLowerCase()))
+                .filter(c -> c.getTitulo() != null && c.getTitulo().toLowerCase().contains(titulo.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
@@ -45,17 +45,17 @@ public class GestorBusqueda {
 
     public List<Contenido> buscarAvanzado(String etiqueta, String categoria, LocalDateTime desde, LocalDateTime hasta) {
         return gestorContenido.getTodos().stream()
-                .filter(c -> etiqueta == null || (c.etiquetas != null && c.etiquetas.stream()
+                .filter(c -> etiqueta == null || (c.getEtiquetas() != null && c.getEtiquetas().stream()
                         .anyMatch(e -> e.equalsIgnoreCase(etiqueta))))
-                .filter(c -> categoria == null || (c.categoria != null && c.categoria.equalsIgnoreCase(categoria)))
-                .filter(c -> desde == null || !c.fechaCreacion.isBefore(desde))
-                .filter(c -> hasta == null || !c.fechaCreacion.isAfter(hasta))
+                .filter(c -> categoria == null || (c.getCategoria() != null && c.getCategoria().equalsIgnoreCase(categoria)))
+                .filter(c -> desde == null || !c.getFechaCreacion().isBefore(desde))
+                .filter(c -> hasta == null || !c.getFechaCreacion().isAfter(hasta))
                 .collect(Collectors.toList());
     }
 
     public List<Contenido> buscarPorAutor(String nombreAutor) {
         return gestorContenido.getTodos().stream()
-                .filter(c -> c.usuario != null && c.usuario.getNombre().equalsIgnoreCase(nombreAutor))
+                .filter(c -> c.getUsuario() != null && c.getUsuario().getNombre().equalsIgnoreCase(nombreAutor))
                 .collect(Collectors.toList());
     }
 }

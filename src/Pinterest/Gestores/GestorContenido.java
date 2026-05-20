@@ -36,20 +36,20 @@ public class GestorContenido implements Exportable {
 
     public Contenido buscarPorId(int id) throws ContenidoNoDisponibleException {
         return contenidos.stream()
-                .filter(c -> c.id == id)
+                .filter(c -> c.getId() == id)
                 .findFirst()
                 .orElseThrow(() -> new ContenidoNoDisponibleException("Contenido con id " + id + " no encontrado"));
     }
 
     public List<Contenido> filtrarPorCategoria(String categoria) {
         return contenidos.stream()
-                .filter(c -> c.categoria != null && c.categoria.equalsIgnoreCase(categoria))
+                .filter(c -> c.getCategoria() != null && c.getCategoria().equalsIgnoreCase(categoria))
                 .collect(Collectors.toList());
     }
 
     public List<Contenido> filtrarPorFecha(LocalDateTime desde, LocalDateTime hasta) {
         return contenidos.stream()
-                .filter(c -> !c.fechaCreacion.isBefore(desde) && !c.fechaCreacion.isAfter(hasta))
+                .filter(c -> !c.getFechaCreacion().isBefore(desde) && !c.getFechaCreacion().isAfter(hasta))
                 .collect(Collectors.toList());
     }
 
