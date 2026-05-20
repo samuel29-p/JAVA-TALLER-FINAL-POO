@@ -41,6 +41,32 @@ public abstract class Contenido implements Comparable<Contenido>{
                 '}';
     }
 
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public List<String> getEtiquetas() {
+        return etiquetas;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+
+    public String getTitulo() {
+        return titulo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
