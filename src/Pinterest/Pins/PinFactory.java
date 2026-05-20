@@ -2,7 +2,7 @@ package Pinterest.Pins;
 
 import Pinterest.Usuario.Usuario;
 
-class PinFactory {
+public class PinFactory {
     private static int contadorId = 1;
     private PinFactory() {}
 

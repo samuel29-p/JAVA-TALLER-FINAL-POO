@@ -26,6 +26,11 @@ public class Historia extends Contenido {
     }
 
     @Override
+    public String getDescripcion() {
+        return "Historia activa: " + estaActiva + " | Expira: " + fechaExpiracion;
+    }
+
+    @Override
     public String toString() {
         return "Historia{" + super.toString() +
                 "fechaExpiracion=" + fechaExpiracion +
