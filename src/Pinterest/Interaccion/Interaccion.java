@@ -29,9 +29,7 @@ public abstract class Interaccion {
     public Contenido getContenido(){
         return contenido;
     }
-    public LocalDateTime getFecha(){
-        return fecha;
-    }
+
 
     @Override
     public boolean equals(Object o) {

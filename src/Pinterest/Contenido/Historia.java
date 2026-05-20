@@ -17,9 +17,7 @@ public class Historia extends Contenido {
         this.estaActiva = true;
     }
 
-    public boolean estaExpirada() {
-        return fechaExpiracion.isBefore(LocalDateTime.now());
-    }
+
 
     public long tiempoRestante() {
         return Duration.between(LocalDateTime.now(), fechaExpiracion).toMinutes();
