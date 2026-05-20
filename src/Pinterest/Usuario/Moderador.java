@@ -19,7 +19,6 @@ public class Moderador extends Usuario {
         System.out.println("Moderador " + nombre + " resolvió el reporte: " + idReporte);
     }
 
-    public String getZona() { return zona; }
 
     @Override
     public String toString() {

@@ -3,7 +3,7 @@ package Pinterest.Notificaciones;
 import Pinterest.Interface.Observable;
 import Pinterest.Interface.Observer;
 import java.util.ArrayList;
-import java.util.List;          // ← este faltaba
+import java.util.List;
 
 public class GestorNotificaciones implements Observable {
     private List<Observer> observers;
