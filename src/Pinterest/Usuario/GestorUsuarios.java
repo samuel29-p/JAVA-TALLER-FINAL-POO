@@ -100,9 +100,11 @@ public class GestorUsuarios {
 
     public List<Usuario> getMasInfluyentes() {
         List<Usuario> lista = new ArrayList<>(usuarios.values());
+        
         // Ordena de mayor a menor cantidad de seguidores
         lista.sort((a, b) -> getCantidadSeguidores(b.getId()) - getCantidadSeguidores(a.getId()));
-        // Devuelve solo los primeros 10 (o menos si hay pocos usuarios)
+        
+        // Devuelve solo los primeros 10 
         return lista.subList(0, Math.min(10, lista.size()));
     }
 
