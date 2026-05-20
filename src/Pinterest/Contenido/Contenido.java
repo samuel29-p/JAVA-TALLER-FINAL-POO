@@ -54,6 +54,14 @@ public abstract class Contenido implements Comparable<Contenido>{
         return Objects.hashCode(id);
     }
 
+
+    public int getId() { return id; }
+    public String getTitulo() { return titulo; }
+    public String getCategoria() { return categoria; }
+    public List<String> getEtiquetas() { return etiquetas; }
+    public LocalDateTime getFechaCreacion() { return fechaCreacion; }
+    public Usuario getUsuario() { return usuario; }
+    public boolean isEsPublico() { return esPublico; }
     @Override
     public int compareTo(Contenido o) {
         return fechaCreacion.compareTo(o.fechaCreacion);
