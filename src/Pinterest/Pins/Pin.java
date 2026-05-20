@@ -31,8 +31,8 @@ public class Pin extends Contenido {
     }
 
     @Override
-    public int compareTo(Pin otro) {
-        return otro.fechaCreacion.compareTo(this.fechaCreacion);
+    public int compareTo(Contenido otro) {
+        return otro.getFechaCreacion().compareTo(this.fechaCreacion);
     }
 
     @Override
